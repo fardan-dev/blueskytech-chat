@@ -12,6 +12,7 @@
 		DA8EEC372D4493920084444C /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC362D4493920084444C /* LocaleDataSource.swift */; };
 		DA8EEC3A2D4493F60084444C /* ChatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC392D4493F60084444C /* ChatEntity.swift */; };
 		DA8EEC3C2D4497860084444C /* CustomError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC3B2D4497860084444C /* CustomError+Ext.swift */; };
+		DA8EEC3E2D44A22A0084444C /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC3D2D44A22A0084444C /* ChatModel.swift */; };
 		DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */; };
 		DA99E7772D44780F00E5686E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7762D44780F00E5686E /* Assets.xcassets */; };
 		DA99E77A2D44780F00E5686E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7792D44780F00E5686E /* Preview Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		DA8EEC362D4493920084444C /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
 		DA8EEC392D4493F60084444C /* ChatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEntity.swift; sourceTree = "<group>"; };
 		DA8EEC3B2D4497860084444C /* CustomError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomError+Ext.swift"; sourceTree = "<group>"; };
+		DA8EEC3D2D44A22A0084444C /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		DA99E76F2D44780D00E5686E /* Blueskytech Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blueskytech Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueskytech_ChatApp.swift; sourceTree = "<group>"; };
 		DA99E7762D44780F00E5686E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		DA8EEC312D447E590084444C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EEC3D2D44A22A0084444C /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				DA8EEC372D4493920084444C /* LocaleDataSource.swift in Sources */,
 				DA8EEC2B2D447D4F0084444C /* ChatView.swift in Sources */,
 				DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */,
+				DA8EEC3E2D44A22A0084444C /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
