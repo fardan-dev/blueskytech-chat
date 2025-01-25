@@ -16,6 +16,7 @@
 		DA8EEC402D44A3AA0084444C /* ChatInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC3F2D44A3AA0084444C /* ChatInteractor.swift */; };
 		DA8EEC422D44A5C00084444C /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC412D44A5C00084444C /* ChatRepository.swift */; };
 		DA8EEC442D44AA990084444C /* ChatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC432D44AA990084444C /* ChatMapper.swift */; };
+		DA8EEC482D44CC910084444C /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC472D44CC910084444C /* ChatPresenter.swift */; };
 		DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */; };
 		DA99E7772D44780F00E5686E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7762D44780F00E5686E /* Assets.xcassets */; };
 		DA99E77A2D44780F00E5686E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7792D44780F00E5686E /* Preview Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		DA8EEC3F2D44A3AA0084444C /* ChatInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractor.swift; sourceTree = "<group>"; };
 		DA8EEC412D44A5C00084444C /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		DA8EEC432D44AA990084444C /* ChatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMapper.swift; sourceTree = "<group>"; };
+		DA8EEC472D44CC910084444C /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
 		DA99E76F2D44780D00E5686E /* Blueskytech Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blueskytech Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueskytech_ChatApp.swift; sourceTree = "<group>"; };
 		DA99E7762D44780F00E5686E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +108,8 @@
 		DA8EEC292D447CEA0084444C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				DA8EEC2A2D447D4F0084444C /* ChatView.swift */,
+				DA8EEC452D44CC6E0084444C /* Presenter */,
+				DA8EEC462D44CC750084444C /* View */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -200,6 +203,22 @@
 				DA8EEC392D4493F60084444C /* ChatEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		DA8EEC452D44CC6E0084444C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DA8EEC472D44CC910084444C /* ChatPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DA8EEC462D44CC750084444C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA8EEC2A2D447D4F0084444C /* ChatView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DA99E7662D44780D00E5686E = {
@@ -324,6 +343,7 @@
 				DA8EEC442D44AA990084444C /* ChatMapper.swift in Sources */,
 				DA8EEC3E2D44A22A0084444C /* ChatModel.swift in Sources */,
 				DA8EEC402D44A3AA0084444C /* ChatInteractor.swift in Sources */,
+				DA8EEC482D44CC910084444C /* ChatPresenter.swift in Sources */,
 				DA8EEC422D44A5C00084444C /* ChatRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
