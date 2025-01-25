@@ -1,6 +1,8 @@
 name: blueskytech-chat workflow branch development
 
 on:
+  push:
+    branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
 
