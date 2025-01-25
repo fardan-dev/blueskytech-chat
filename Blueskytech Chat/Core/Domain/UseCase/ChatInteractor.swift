@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ChatUseCase {
-    func getChats() -> AnyPublisher<[ChatModel], Error>
+    func getChats(userSender: String) -> AnyPublisher<[ChatModel], Error>
     func addChat(name: String, message: String) -> AnyPublisher<Bool, Error>
 }
 
@@ -20,9 +20,9 @@ class ChatsInteractor: ChatUseCase {
         self.repository = repository
     }
     
-    func getChats() -> AnyPublisher<[ChatModel], Error> {
+    func getChats(userSender: String) -> AnyPublisher<[ChatModel], Error> {
         return repository
-            .getChats()
+            .getChats(userSender: userSender)
             .eraseToAnyPublisher()
     }
     

@@ -11,4 +11,5 @@ struct ChatModel: Equatable, Identifiable {
     var id: String
     var user: String
     var message: String
+    var isUserSender: Bool
 }

@@ -8,12 +8,13 @@
 import Foundation
 
 final class ChatMapper {
-    static func mapChatEntitiesToDomains(input chatEntities: [ChatEntity]) -> [ChatModel] {
+    static func mapChatEntitiesToDomains(input chatEntities: [ChatEntity], userSender: String) -> [ChatModel] {
         return chatEntities.map { result in
             return ChatModel(
-                id: "\(result._id)",
-                user: result.user,
-                message: result.message
+                id: "\(result.id)",
+                user: result.user == "left" ? "User Left" : "User Right",
+                message: result.message,
+                isUserSender: result.user == userSender ? true : false
             )
         }
     }
