@@ -10,7 +10,7 @@ import RealmSwift
 import Combine
 
 protocol LocaleDataSourceProtocol {
-    func getChats() -> AnyPublisher<[ChatEntity], Error>
+    func getChats(userSender: String) -> AnyPublisher<[ChatEntity], Error>
     func addChat(user: String, message: String) -> AnyPublisher<Bool, Error>
 }
 
@@ -26,7 +26,7 @@ final class LocaleDataSource: NSObject {
 }
 
 extension LocaleDataSource: LocaleDataSourceProtocol {
-    func getChats() -> AnyPublisher<[ChatEntity], any Error> {
+    func getChats(userSender: String) -> AnyPublisher<[ChatEntity], any Error> {
         return Future<[ChatEntity], Error> { completion in
             if let realm = self.realm {
                 let chats: Results<ChatEntity> = {

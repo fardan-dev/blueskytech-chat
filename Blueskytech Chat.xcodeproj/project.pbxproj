@@ -17,6 +17,7 @@
 		DA8EEC422D44A5C00084444C /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC412D44A5C00084444C /* ChatRepository.swift */; };
 		DA8EEC442D44AA990084444C /* ChatMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC432D44AA990084444C /* ChatMapper.swift */; };
 		DA8EEC482D44CC910084444C /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC472D44CC910084444C /* ChatPresenter.swift */; };
+		DA8EEC4A2D452E510084444C /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC492D452E510084444C /* Injection.swift */; };
 		DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */; };
 		DA99E7772D44780F00E5686E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7762D44780F00E5686E /* Assets.xcassets */; };
 		DA99E77A2D44780F00E5686E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7792D44780F00E5686E /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		DA8EEC412D44A5C00084444C /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		DA8EEC432D44AA990084444C /* ChatMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMapper.swift; sourceTree = "<group>"; };
 		DA8EEC472D44CC910084444C /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		DA8EEC492D452E510084444C /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		DA99E76F2D44780D00E5686E /* Blueskytech Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blueskytech Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueskytech_ChatApp.swift; sourceTree = "<group>"; };
 		DA99E7762D44780F00E5686E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		DA8EEC2F2D447E3C0084444C /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EEC492D452E510084444C /* Injection.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			files = (
 				DA8EEC3A2D4493F60084444C /* ChatEntity.swift in Sources */,
 				DA8EEC3C2D4497860084444C /* CustomError+Ext.swift in Sources */,
+				DA8EEC4A2D452E510084444C /* Injection.swift in Sources */,
 				DA8EEC372D4493920084444C /* LocaleDataSource.swift in Sources */,
 				DA8EEC2B2D447D4F0084444C /* ChatView.swift in Sources */,
 				DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */,

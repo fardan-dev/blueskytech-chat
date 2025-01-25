@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class ChatEntity: Object {
-    @objc dynamic var _id: ObjectId = ObjectId.generate()
+    @objc dynamic var id: ObjectId = ObjectId.generate()
     @objc dynamic var user: String = ""
     @objc dynamic var message: String = ""
     @objc dynamic var createdAt: Date = Date()

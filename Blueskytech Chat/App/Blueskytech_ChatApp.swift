@@ -11,9 +11,11 @@ import UserNotifications
 @main
 struct Blueskytech_ChatApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    var chatPresenter = ChatPresenter(chatUseCase: Injection().provideChats())
+    
     var body: some Scene {
         WindowGroup {
-            ChatView()
+            ChatView(presenter: chatPresenter)
         }
     }
 }

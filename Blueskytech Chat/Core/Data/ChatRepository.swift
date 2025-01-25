@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ChatRepositoryProtocol {
-    func getChats() -> AnyPublisher<[ChatModel], Error>
+    func getChats(userSender: String) -> AnyPublisher<[ChatModel], Error>
     func addChat(user: String, message: String) -> AnyPublisher<Bool, Error>
 }
 
@@ -27,13 +27,9 @@ class ChatRepository: NSObject {
 }
 
 extension ChatRepository: ChatRepositoryProtocol {
-    func getChats() -> AnyPublisher<[ChatModel], Error> {
-        return locale.getChats()
-            .flatMap { result -> AnyPublisher<[ChatModel], Error> in
-                return self.locale.getChats()
-                    .map{ ChatMapper.mapChatEntitiesToDomains(input: $0) }
-                    .eraseToAnyPublisher()
-            }
+    func getChats(userSender: String) -> AnyPublisher<[ChatModel], Error> {
+        return self.locale.getChats(userSender: userSender)
+            .map{ ChatMapper.mapChatEntitiesToDomains(input: $0, userSender: userSender) }
             .eraseToAnyPublisher()
     }
     

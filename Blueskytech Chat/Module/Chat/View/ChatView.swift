@@ -8,40 +8,49 @@
 import SwiftUI
 
 struct ChatView: View {
-    @State var text: String = ""
+    @ObservedObject var presenter: ChatPresenter
+    
+    @State private var text: String = ""
     @State private var selectedTab = 0
+    @State private var currentUser: String = "left"
     
     var body: some View {
         VStack {
             TabView {
                 VStack {
                     ScrollView {
-                        senderBubbleView(message: "Ini adalah bubble untuk sender")
-                        
-                        
-                        receiverBubbleView(messageId: 0, message: "Ini adalah bubble untuk receiver")
-                        
+                        ForEach(presenter.chatsModel, id: \.id) { chat in
+                            if chat.isUserSender {
+                                senderBubbleView(user: chat.user, message: chat.message)
+                            } else {
+                                receiverBubbleView(user: chat.user, message: chat.message)
+                            }
+                        }
                     }
                     .padding()
                 }
                 .tag(0)
                 .onAppear(perform: {
-                    print("Enter Page 1")
+                    presenter.getChats(user: "left")
+                    currentUser = "left"
                 })
                 
                 VStack {
                     ScrollView {
-                        senderBubbleView(message: "Ini adalah bubble untuk sender")
-                        
-                        
-                        receiverBubbleView(messageId: 0, message: "Ini adalah bubble untuk receiver")
-                        
+                        ForEach(presenter.chatsModel, id: \.id) { chat in
+                            if chat.isUserSender {
+                                senderBubbleView(user: chat.user, message: chat.message)
+                            } else {
+                                receiverBubbleView(user: chat.user, message: chat.message)
+                            }
+                        }
                     }
                     .padding()
                 }
                 .tag(1)
                 .onAppear(perform: {
-                    print("Enter Page 2")
+                    presenter.getChats(user: "right")
+                    currentUser = "right"
                 })
                 
             }
@@ -53,6 +62,7 @@ struct ChatView: View {
                         .autocorrectionDisabled()
                     
                     Button {
+                        presenter.addChat(user: currentUser, message: text)
                         self.text = ""
                     } label: {
                         Text("Send")
@@ -66,11 +76,14 @@ struct ChatView: View {
             .background(.white)
         }
         .background(Color.teal)
+        .onAppear(perform: {
+            presenter.getChats(user: "left")
+        })
     }
 }
 
 extension ChatView {
-    func senderBubbleView(message: String) -> some View {
+    func senderBubbleView(user: String, message: String) -> some View {
         HStack {
             Spacer()
             
@@ -78,7 +91,7 @@ extension ChatView {
                 .frame(minWidth: 0, maxWidth: 20)
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("User Left")
+                Text(user)
                     .fontWeight(.bold)
                     .font(.caption)
                 
@@ -93,11 +106,11 @@ extension ChatView {
         }
     }
     
-    func receiverBubbleView(messageId: Int, message: String) -> some View {
+    func receiverBubbleView(user: String, message: String) -> some View {
         VStack {
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("User Right")
+                    Text(user)
                         .fontWeight(.bold)
                         .font(.caption)
                     
@@ -117,8 +130,4 @@ extension ChatView {
             }
         }
     }
-}
-
-#Preview {
-    ChatView()
 }
