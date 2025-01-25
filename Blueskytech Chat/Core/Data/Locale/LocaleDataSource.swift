@@ -11,7 +11,7 @@ import Combine
 
 protocol LocaleDataSourceProtocol {
     func getChats() -> AnyPublisher<[ChatEntity], Error>
-    func addChat(chat: ChatEntity) -> AnyPublisher<Bool, Error>
+    func addChat(user: String, message: String) -> AnyPublisher<Bool, Error>
 }
 
 final class LocaleDataSource: NSObject {
@@ -39,12 +39,15 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
         }.eraseToAnyPublisher()
     }
     
-    func addChat(chat: ChatEntity) -> AnyPublisher<Bool, any Error> {
+    func addChat(user: String, message: String) -> AnyPublisher<Bool, any Error> {
         return Future<Bool, Error> { completion in
             if let realm = self.realm {
                 do {
                     try realm.write ({
-                        realm.add(chat, update: .all)
+                        let chatEntity = ChatEntity()
+                        chatEntity.user = user
+                        chatEntity.message = message
+                        realm.add(chatEntity)
                         completion(.success(true))
                     })
                 } catch {

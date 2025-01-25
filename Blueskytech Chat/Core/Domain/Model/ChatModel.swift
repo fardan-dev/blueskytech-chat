@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameModel: Equatable, Identifiable {
+struct ChatModel: Equatable, Identifiable {
     var id: String
     var user: String
     var message: String
