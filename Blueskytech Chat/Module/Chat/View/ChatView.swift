@@ -15,70 +15,80 @@ struct ChatView: View {
     @State private var currentUser: String = "left"
     
     var body: some View {
-        VStack {
-            TabView {
-                VStack {
-                    ScrollView {
-                        ForEach(presenter.chatsModel, id: \.id) { chat in
-                            if chat.isUserSender {
-                                senderBubbleView(user: chat.user, message: chat.message)
-                            } else {
-                                receiverBubbleView(user: chat.user, message: chat.message)
+        NavigationStack {
+            VStack {
+                TabView {
+                    VStack {
+                        ScrollView {
+                            ForEach(presenter.chatsModel, id: \.id) { chat in
+                                if chat.isUserSender {
+                                    senderBubbleView(user: chat.user, message: chat.message)
+                                } else {
+                                    receiverBubbleView(user: chat.user, message: chat.message)
+                                }
                             }
                         }
+                        .padding()
+                    }
+                    .tag(0)
+                    .onAppear(perform: {
+                        presenter.getChats(user: "left")
+                        currentUser = "left"
+                    })
+                    
+                    VStack {
+                        ScrollView {
+                            ForEach(presenter.chatsModel, id: \.id) { chat in
+                                if chat.isUserSender {
+                                    senderBubbleView(user: chat.user, message: chat.message)
+                                } else {
+                                    receiverBubbleView(user: chat.user, message: chat.message)
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                    .tag(1)
+                    .onAppear(perform: {
+                        presenter.getChats(user: "right")
+                        currentUser = "right"
+                    })
+                    
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                
+                ZStack {
+                    HStack(spacing: 16) {
+                        TextField("input message", text: $text)
+                            .autocorrectionDisabled()
+                        
+                        Button {
+                            presenter.addChat(user: currentUser, message: text)
+                            self.text = ""
+                        } label: {
+                            Text("Send")
+                                .fontWeight(.medium)
+                                .foregroundStyle(Color.black)
+                        }
+                        
                     }
                     .padding()
                 }
-                .tag(0)
-                .onAppear(perform: {
-                    presenter.getChats(user: "left")
-                    currentUser = "left"
-                })
-                
-                VStack {
-                    ScrollView {
-                        ForEach(presenter.chatsModel, id: \.id) { chat in
-                            if chat.isUserSender {
-                                senderBubbleView(user: chat.user, message: chat.message)
-                            } else {
-                                receiverBubbleView(user: chat.user, message: chat.message)
-                            }
-                        }
-                    }
-                    .padding()
-                }
-                .tag(1)
-                .onAppear(perform: {
-                    presenter.getChats(user: "right")
-                    currentUser = "right"
-                })
-                
+                .background(.white)
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-            
-            ZStack {
-                HStack(spacing: 16) {
-                    TextField("input message", text: $text)
-                        .autocorrectionDisabled()
-                    
-                    Button {
-                        presenter.addChat(user: currentUser, message: text)
-                        self.text = ""
-                    } label: {
-                        Text("Send")
-                            .fontWeight(.medium)
-                            .foregroundStyle(Color.black)
-                    }
-                    
+            .background(Color.teal)
+            .onAppear(perform: {
+                presenter.getChats(user: "left")
+            })
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Chat Room")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
                 }
-                .padding()
             }
-            .background(.white)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .background(Color.teal)
-        .onAppear(perform: {
-            presenter.getChats(user: "left")
-        })
     }
 }
 
