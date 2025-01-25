@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DA8EEC202D447A060084444C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA8EEC1F2D447A060084444C /* RealmSwift */; settings = {ATTRIBUTES = (Required, ); }; };
 		DA8EEC2B2D447D4F0084444C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC2A2D447D4F0084444C /* ChatView.swift */; };
+		DA8EEC372D4493920084444C /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC362D4493920084444C /* LocaleDataSource.swift */; };
+		DA8EEC3A2D4493F60084444C /* ChatEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC392D4493F60084444C /* ChatEntity.swift */; };
+		DA8EEC3C2D4497860084444C /* CustomError+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8EEC3B2D4497860084444C /* CustomError+Ext.swift */; };
 		DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */; };
 		DA99E7772D44780F00E5686E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7762D44780F00E5686E /* Assets.xcassets */; };
 		DA99E77A2D44780F00E5686E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA99E7792D44780F00E5686E /* Preview Assets.xcassets */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		DA8EEC2A2D447D4F0084444C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		DA8EEC362D4493920084444C /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
+		DA8EEC392D4493F60084444C /* ChatEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEntity.swift; sourceTree = "<group>"; };
+		DA8EEC3B2D4497860084444C /* CustomError+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomError+Ext.swift"; sourceTree = "<group>"; };
 		DA99E76F2D44780D00E5686E /* Blueskytech Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blueskytech Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA99E7722D44780D00E5686E /* Blueskytech_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blueskytech_ChatApp.swift; sourceTree = "<group>"; };
 		DA99E7762D44780F00E5686E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,10 +71,10 @@
 		DA8EEC262D447CB40084444C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EEC2C2D447E060084444C /* Data */,
+				DA8EEC2D2D447E0F0084444C /* Domain */,
 				DA8EEC2F2D447E3C0084444C /* DI */,
 				DA8EEC2E2D447E180084444C /* Utils */,
-				DA8EEC2D2D447E0F0084444C /* Domain */,
-				DA8EEC2C2D447E060084444C /* Data */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -148,6 +154,8 @@
 		DA8EEC322D447E830084444C /* Locale */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EEC382D4493E80084444C /* Entity */,
+				DA8EEC362D4493920084444C /* LocaleDataSource.swift */,
 			);
 			path = Locale;
 			sourceTree = "<group>";
@@ -169,8 +177,17 @@
 		DA8EEC352D447ED90084444C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DA8EEC3B2D4497860084444C /* CustomError+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA8EEC382D4493E80084444C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DA8EEC392D4493F60084444C /* ChatEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		DA99E7662D44780D00E5686E = {
@@ -287,6 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8EEC3A2D4493F60084444C /* ChatEntity.swift in Sources */,
+				DA8EEC3C2D4497860084444C /* CustomError+Ext.swift in Sources */,
+				DA8EEC372D4493920084444C /* LocaleDataSource.swift in Sources */,
 				DA8EEC2B2D447D4F0084444C /* ChatView.swift in Sources */,
 				DA99E7732D44780D00E5686E /* Blueskytech_ChatApp.swift in Sources */,
 			);
